@@ -1,0 +1,14 @@
+disk_config disk1  fstabkey:uuid disklabel:msdos bootable:1
+primary /boot       2048      ext4    rw
+primary	-           51200     -       -
+primary -           0-        -       -
+
+disk_config lvm
+vg      srvg	disk1.2
+srvg-root	/	20480	ext4	rw
+srvg-swap	swap	4096	swap	sw
+
+disk_config lvm
+vg      vmvg	disk1.3
+vmvg-test	-	1	-	-
+

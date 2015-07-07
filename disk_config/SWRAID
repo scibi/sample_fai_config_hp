@@ -1,0 +1,24 @@
+disk_config sda
+primary -	2048	-	-
+primary	-	51200	-	-
+primary -	0-	-	-
+
+disk_config sdb
+primary -	2048	-	-
+primary	-	51200	-	-
+primary -	0-	-	-
+
+disk_config raid
+raid1 /boot	sda1,sdb1	ext4    rw
+raid1 -		sda2,sdb2	-    -
+raid1 -		sda3,sdb3	-    -
+
+disk_config lvm
+vg      srvg	md1
+srvg-root	/	20480	ext4	rw
+srvg-swap	swap	4096	swap	sw
+
+disk_config lvm
+vg      vmvg	md2
+vmvg-test	-	1	-	-
+

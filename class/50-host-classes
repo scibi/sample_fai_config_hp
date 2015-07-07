@@ -28,7 +28,7 @@ case $HOSTNAME in
         ifclass AMD64 && echo SLC6_64
         exit 0 ;; # CentOS/SLC does not use the GRUB class
     *)
-        echo "FAIBASE DEBIAN DHCPC" ;;
+        echo "FAIBASE DEBIAN DHCPC HWRAID" ;;
 esac
 
 ifclass -o I386 AMD64 && echo GRUB_PC
