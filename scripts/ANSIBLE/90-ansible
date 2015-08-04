@@ -1,0 +1,9 @@
+#! /bin/bash
+
+error=0; trap 'error=$(($?>$error?$?:$error))' ERR # save maximum error code
+
+$ROOTCMD ansible-pull -U https://github.com/scibi/sample_ansible_pull.git -i 'localhost,'
+
+exit $error
+
+
